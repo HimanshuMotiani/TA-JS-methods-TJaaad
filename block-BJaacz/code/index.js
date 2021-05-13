@@ -125,10 +125,12 @@ function callMe(callBack) {
   final = callBack();
   return final;
 }
-function callBack() {
-  return 2;
-}
-console.log(callMe(callBack));
+
+let test = callMe(function(){
+  return 21;
+});
+
+//21
 
 // Data Starts (Don't change this)
 const people = [
