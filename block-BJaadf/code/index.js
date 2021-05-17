@@ -54,31 +54,42 @@ let numbersTwo = [1, 2, [3, 4, [5, 6]]];
 let numbersThree = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
 
 // Convert the numbers array to one level element. Remove sub-arrays to individual elements and log them
-
+console.log(numbers.flat());
 // Convert the numbersTwo array to one level element. Remove all sub-arrays to individual elements and log them.
 // (for multiple level flat accepts argument by default it's 1 `array.flat(2)`)
-
+console.log(numbersTwo.flat(2))
 // Convert the numbersThree array to one level element.
 // Remove all sub-arrays to individual elements, log them and update the value of numbersThree to the new flat array.
-
+console.log(numbersThree.flat(4));
 // Use forEach to log all the elements of numberThree array
-
+numbersThree.flat(4).forEach(ele =>{
+    console.log(ele);
+})
 // Create a new variable named doubleNumbers that store the numberThree array (each element should be multiplied by 2). Use map
-
+let doubleNumbers = numbersThree.flat(4).map(ele => {
+    return ele * 2;
+});
 // Create a new variable named tripleNumbers that store the numberThree array (each element should be multiplied by 3). Use map
-
+let tripleNumbers = numbersThree.flat(4).map(ele => {
+    return ele * 3;
+});
 // Create a new variable named halfNumbers that store the numberThree array (each element should be divided by 2). Use map
-
+let halfNumbers = numbersThree.flat(4).map(ele => {
+    return ele / 2;
+});
 // Create a new variable named oddNumbers that store all the odd numbers in numbersThree array
-
+let oddNumbers = numbersThree.flat(4).filter(ele => 
+     ele % 2 !=  0);
 // Create a new variable named evenNumbers that store all the even numbers in numbersThree array
-
+let evenNumbers = numbersThree.flat(4).filter(ele => 
+    ele % 2 ==  0);
 // Find the index of 10 in numbersThree array
-
+numbersThree.flat(4).indexOf(10)
 // Reverse the values of numbersThree array
-
+numbersThree.flat(4).reverse();
 // Reverse the values of numbersTwo array
-
+numbersTwo.flat(2).reverse();
 // Join all fruits with '-', convert to uppercase and log it
-
+console.log(fruits.join('-').toUpperCase());
 // Join all fruits with '&', convert to lowercase and log it
+console.log(fruits.join('&').toLowerCase());
