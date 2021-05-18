@@ -32,23 +32,25 @@ fruits.splice(5)
 // Create another array named moreFruits with values ['Berries', 'Melons']
 let moreFruits = ['Berries', 'Melons'];
 // Concat moreFruits into fruits array (re-assign so the value gets updated)
-let newFruits = fruits.concat(moreFruits);
+fruits = fruits.concat(moreFruits);
 // Log the name of all fruit in console
-console.log(newFruits);
+console.log(fruits);
 // Convert each fruit name to lowercase and log it
-newFruits.forEach(ele =>{
+fruits.forEach(ele =>{
     console.log(ele.toLowerCase());
 })
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
-let lowercaseFruits = [];
-newFruits.forEach(ele =>{
-    lowercaseFruits.push(ele.toLowerCase());
-})
+// let lowercaseFruits = [];
+// fruits.forEach(ele =>{
+//     lowercaseFruits.push(ele.toLowerCase());
+// })
+let lowercaseFruits = fruits.map(ele => ele.toLowerCase());
 // Convert all fruits name into uppercase and store in new array named uppercaseFruits
-let uppercaseFruits = [];
-newFruits.forEach(ele =>{
-    uppercaseFruits.push(ele.toUpperCase());
-})
+// let uppercaseFruits = [];
+// fruits.forEach(ele =>{
+//     uppercaseFruits.push(ele.toUpperCase());
+// })
+let lowercaseFruits = fruits.map(ele => ele.toUpperCase());
 let numbers = [1, 2, [3, 4]];
 let numbersTwo = [1, 2, [3, 4, [5, 6]]];
 let numbersThree = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
@@ -60,33 +62,34 @@ console.log(numbers.flat());
 console.log(numbersTwo.flat(2))
 // Convert the numbersThree array to one level element.
 // Remove all sub-arrays to individual elements, log them and update the value of numbersThree to the new flat array.
-console.log(numbersThree.flat(4));
+numbersThree = numbersThree.flat(4);
 // Use forEach to log all the elements of numberThree array
-numbersThree.flat(4).forEach(ele =>{
+numbersThree.forEach(ele =>{
     console.log(ele);
 })
 // Create a new variable named doubleNumbers that store the numberThree array (each element should be multiplied by 2). Use map
-let doubleNumbers = numbersThree.flat(4).map(ele => {
+let doubleNumbers = numbersThree.map(ele => {
     return ele * 2;
 });
 // Create a new variable named tripleNumbers that store the numberThree array (each element should be multiplied by 3). Use map
-let tripleNumbers = numbersThree.flat(4).map(ele => {
+let tripleNumbers = numbersThree.map(ele => {
     return ele * 3;
 });
 // Create a new variable named halfNumbers that store the numberThree array (each element should be divided by 2). Use map
-let halfNumbers = numbersThree.flat(4).map(ele => {
+let halfNumbers = numbersThree.map(ele => {
     return ele / 2;
 });
 // Create a new variable named oddNumbers that store all the odd numbers in numbersThree array
-let oddNumbers = numbersThree.flat(4).filter(ele => 
+let oddNumbers = numbersThree.filter(ele => 
      ele % 2 !=  0);
 // Create a new variable named evenNumbers that store all the even numbers in numbersThree array
-let evenNumbers = numbersThree.flat(4).filter(ele => 
+let evenNumbers = numbersThree.filter(ele => 
     ele % 2 ==  0);
 // Find the index of 10 in numbersThree array
-numbersThree.flat(4).indexOf(10)
+numbersThree.indexOf(10)
+// numbersThree.find(x => x ===10)
 // Reverse the values of numbersThree array
-numbersThree.flat(4).reverse();
+numbersThree.reverse();
 // Reverse the values of numbersTwo array
 numbersTwo.flat(2).reverse();
 // Join all fruits with '-', convert to uppercase and log it
