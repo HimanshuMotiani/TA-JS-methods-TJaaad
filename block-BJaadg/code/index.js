@@ -70,11 +70,11 @@ console.log(quote.indexOf("o",10));
 /*
 13. Find the last index of letter "a" in quote.
 */
-console.log(quote.lastIndexOf("a"));
+var lastA = quote.lastIndexOf("a");
 /*
 14. Find the second last index of letter "a" in quote.
 */
-console.log(quote.lastIndexOf("a" , 3));
+console.log(quote.lastIndexOf("a" , lastA -1));
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
@@ -102,7 +102,7 @@ console.log(quote.replace("toStarkday", "Lannister"));
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
-console.log(quote.slice(0,30))
+console.log(quote.slice(0,30) + "...")
 /*
 21. Find out does quote, from, to starts with "A"
 */
