@@ -13,7 +13,7 @@ Clone the array before using sort method: [...arr]
 // - Find the index of `101` in numbers
 console.log(numbers.indexOf(101));
 // - Find the last index of `9` in numbers
-console.log(numbers.indexOf(9));
+console.log(numbers.lastIndexOf(9));
 // - Convert value of strings array into a sentance like "This is a collection of words"
 console.log(strings.join(" "));
 // - Add two new words in the strings array "called" and "sentance"
@@ -43,12 +43,14 @@ let num = [...numbers].sort(compareFunction)
 function compareFunction(a,b){
   return a - b;
 }
+num = [...numbers].sort((a,b) => a-b);
 console.log(num)
 
 // - Remove the last word in strings
 strings.pop();
 // - Find largest number in numbers
-numbers.pop()
+let largestNum = [...numbers].sort((a,b) => a-b).pop();
+console.log(largestNum);
 // - Find longest string in strings
 let maxStringLength = Number.MIN_VALUE;
 let longString = "";
@@ -60,6 +62,9 @@ if(strings[i].length > maxStringLength){
 }
 console.log(longString);
 console.log(maxStringLength);
+//OR
+let largestString = [...strings].sort((a,b) => a.length-b.length).pop();
+console.log(largestString);
 // - Find all the even numbers
 let evenNum = numbers.filter(x=>{
   return x%2 ==0
@@ -75,20 +80,22 @@ let subArrayNum = numbers.slice(3,7);
 // - Make a subset of strings array ['a','collection']
 let subArrayStr = strings.slice(2,3);
 // - Replace 12 & 18 with 1221 and 1881
-numbers.forEach((x,index) =>{
+console.log(numbers.map((x,index) =>{
   if(x == 12)
-  numbers[index] = 1221
-  if(x== 18)
-  numbers[index] = 1881;
-})
-console.log(numbers);
+  return 1221
+  else if(x== 18)
+  return 1881;
+  else return x
+}));
 // - Replace words in strings array with the length of the word
 let length = 0
-strings.forEach((x,index)=>{
-  strings[index]= x.length
-length = length + x.length;
-});
-console.log(strings);
+// strings.forEach((x,index)=>{
+//   strings[index]= x.length
+// length = length + x.length;
+// });
+// console.log(strings);
+//OR
+let stringLength = strings.map(str => str.length);
 // - Find the sum of the length of words using above question
 console.log(length)
 // - Customers Array
@@ -105,26 +112,32 @@ let j= customers.filter(x=>{
 })
 console.log(j)
 // - Create new array with only first name
-let firstName = [];
-customers.filter(x =>{
-  firstName.push(x.firstname)
-})
+let firstName = customers.map(x =>
+  x.firstname
+)
 console.log(firstName)
 // - Create new array with all the full names (ex: "Joe Blogs")
-let fullName = [];
-customers.forEach(x=>
-  fullName.push(x.firstname.concat(" ",x.lastname))
+let fullName = customers.map(x=>
+  x.firstname.concat(" ",x.lastname)
   )
-  console.log(fullName)
+  console.log(fullName);
 // - Sort the array created above alphabetically
-fullName.sort();
+[...fullName].sort();
 console.log(fullName)
 // - Create a new array that contains only user who has at least one vowel in the firstname.
-let user = [];
-vowel = ["a","e","i","o","u"];
-customers.filter(x=>{
+
+let user = customers.filter(x=>{
   
-  if(x.firstname.includes(vowel));
-  user.push(x.firstname);
-})
+  if(
+    (x.firstname.toLowerCase().includes("a")) ||
+    (x.firstname.toLowerCase().includes("e")) ||
+    (x.firstname.toLowerCase().includes("i")) ||
+    (x.firstname.toLowerCase().includes("o")) ||
+    (x.firstname.toLowerCase().includes("u"))
+  ){
+    return true;
+  }
+  else return false;
+});
+
 console.log(user)
