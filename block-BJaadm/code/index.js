@@ -55,17 +55,17 @@ let even = peopleGrade.filter(x=>{
 return x % 2 ==0
 })
 // Find the first name that starts with 'J' in persons array and log the object
-let jNames = persons.filter(x =>{
+let jNames = persons.find(x =>{
   return x.name.startsWith("J");
 })
 console.log(jNames);
 // Find the first name that starts with 'P' in persons array and log the object
-let pNames = persons.filter(x =>{
+let pNames = persons.find(x =>{
   return x.name.startsWith("P");
 })
 console.log(pNames);
 // Find the first name that starts with 'J', grade is greater than 10 and is a female
-let filtered = persons.filter(x => {
+let filtered = persons.find(x => {
   return (x.sex == "F") && x.name.startsWith("J") && x.grade > 10
 })
 // Filter all the female from persons array and store in femalePersons array
