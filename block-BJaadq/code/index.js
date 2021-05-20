@@ -2,34 +2,100 @@
 
 function countAllPeople() {
   // your code goes here
+  let count = 0;
+  got.houses.forEach(x => {
+    count = count + x.people.length
+  })
+  return count;
 }
 
 function peopleByHouses() {
   // your code goes here
+  let obj = {}
+  got.houses.forEach((x) => {
+    obj[x.name] = x.people.length
+  })
+  return obj
 }
 
 function everyone() {
   // your code goes here
+  let arr = []
+  got.houses.forEach(x => {
+    x.people.forEach(y => {
+      arr.push(y.name);
+    });
+  });
+  return arr;
 }
 
 function nameWithS() {
   // your code goes here
+  let arr = []
+  got.houses.forEach(x => {
+    x.people.forEach(y => {
+      if ((y.name.indexOf("s") !== -1) || (y.name.indexOf("S") !== -1)) {
+        arr.push(y.name);
+      }
+    });
+  });
+  return arr;
+
 }
 
 function nameWithA() {
   // your code goes here
+  let arr = [];
+  got.houses.forEach(x => {
+    x.people.forEach(y => {
+      if ((y.name.indexOf("a") !== -1) || (y.name.indexOf("A") !== -1)) {
+        arr.push(y.name);
+      }
+    });
+  });
+  return arr;
+
 }
 
 function surnameWithS() {
   // your code goes here
+  let arr = [];
+  got.houses.forEach(x => {
+    x.people.forEach(y => {
+      let val = y.name.split(" ");
+      if ((val[1].indexOf("S") !== -1)) {
+        arr.push(y.name);
+      }
+    });
+  });
+  return arr;
+
 }
 
 function surnameWithA() {
   // your code goes here
+  let arr = [];
+  got.houses.forEach(x => {
+    x.people.filter(y => {
+      let val = y.name.split(" ");
+      if ((val[1].indexOf("A") !== -1)) {
+        arr.push(y.name);
+      }
+    });
+  });
+  return arr;
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let obj = {}
+  got.houses.forEach(x => {
+    obj[x.name] = x.people.map(y => {
+      return y.name
+    })
+  })
+  return obj
+
 }
 
 // Testing your result after writing your function
