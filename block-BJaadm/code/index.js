@@ -114,11 +114,11 @@ console.log(peopleGrade.sort((a,b) => a-b).pop());
 // Find the highest grade in male
 let highGradeMale = persons.filter(x=>{
   return x.sex == "M"
-}).sort((a,b) => a-b).pop();
+}).sort((a,b) => a.grade-b.grade).pop();
 // Find the highest grade in female
 let highGradeFemale = persons.filter(x=>{
   return x.sex == "F"
-}).sort((a,b) => a-b).pop();
+}).sort((a,b) => a.grade-b.grade).pop();
 // Find the highest grade for people whose name starts with 'J' or 'P'
 let highGrade =persons.filter(x=> {
   return x.name.startsWith('J') || x.name.startsWith('P')
